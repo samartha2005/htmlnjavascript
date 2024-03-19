@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <h1 align="left"><b><font color="#ACF232">Sum of Digits</font></b></h1>
+    </head>
+    <body bgcolor="#FF5733">
+        <script>
+            function find()
+            {
+                var sum = 0;
+                var n1 = parseInt(frm.t1.value);
+                var n2 = parseInt(frm.t2.value);
+                sum = n1 + n2;
+                alert("Sum of Digits: " + sum);
+            }
+        </script>
+        <form name="frm" align="left">
+            <table align="left">
+                <tr>
+                    <td>Enter First Digit: &nbsp;&nbsp;&nbsp;&nbsp;<input name="t1" type="number"></td>
+                </tr><br><br>
+                <tr>
+                    <td>Enter second Digit: &nbsp;&nbsp;&nbsp;&nbsp;<input name="t2" type="number"></td>
+                </tr><br><br>
+            </table>
+            <input name="b1" onclick="find()" type="button" value="display">
+        </form>
+    </body>
+</html>

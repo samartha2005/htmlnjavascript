@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <h1 align="center">Word Count Demo</h1>
+    </head>
+    <body bgcolor="#AFE02D ">
+    <div align="center">
+        <input id="numb" placeholder="Enter String">
+        <button type="button" onclick="WordCout()">Submit</button>
+        <p id="Demo"></p>
+        <script>
+            function WordCout(){
+                var str = document.getElementById("numb").value;
+                var wordCout = str.match(/(\w+)/g).length;
+                document.getElementById("Demo").innerHTML = "There are "  + wordCout + "word(s) in string.......!!!";
+            }
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+    <script>
+        function fact() {
+            var x = parseInt(document.getElementById("numberInput").value);
+            var a = 1;
+            while(x >= 1) {
+                a = a * x;
+                x = x - 1;
+            }
+            document.write("Factorial is " + a);
+        }
+    </script>
+    <body bgcolor="#42B49F">
+        <center>
+            <h1><font color="brown">Factorial Calculator</font></h1><br><br>
+            <input type="number" id="numberInput" placeholder="Enter a number"><br><br>
+            <input type="button" value="Factorial" onclick="fact()"><br>
+        </center>
+    </body>
+</html>

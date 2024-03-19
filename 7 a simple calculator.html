@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <style>
+            table{
+                background-color: #708090;
+            }
+            .button.black{
+                background-color: antiquewhite;
+                color: black;
+            }
+            .button.pink{
+                background-color:#ffe5b4;
+            }
+        </style>
+        <script>
+            function c(val){
+                document.getElementById("d").value = val;
+            }
+            
+            function v(val){
+                if (val === '=') {
+                    e();
+                } else if (val === 'C') {
+                    c('');
+                } else {
+                    document.getElementById("d").value += val;
+                }
+            }
+            
+            function e(){
+                try {
+                    c(eval(document.getElementById("d").value));
+                } catch(e) {
+                    c('Error');
+                }
+            }
+        </script>
+        
+        <h1 align="center"><font color="#ceff00"><strong>Calaculator Demo</strong></font></h1>
+    </head>
+    <body bgcolor="#bc8f8f"> 
+        <div align="center">
+            <table width="15px" border="4">
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="text" readonly size="25" id = "d" placeholder="0">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            <input type="button" class="button black" value="7" onclick='v("7")'>
+                            <input type="button" class="button black" value="8" onclick='v("8")'>
+                            <input type="button" class="button black" value="9" onclick='v("9")'>
+                        </p>
+                        <p>
+                            <input type="button" class="button black" value="4" onclick='v("4")'>
+                            <input type="button" class="button black" value="5" onclick='v("5")'>
+                            <input type="button" class="button black" value="6" onclick='v("6")'>  
+                        </p>
+                        <p>
+                            <input type="button" class="button black" value="1" onclick='v("1")'>
+                            <input type="button" class="button black" value="2" onclick='v("2")'>
+                            <input type="button" class="button black" value="3" onclick='v("3")'>
+                        </p>
+                        <p>
+                            <input type="button" class="button black" value="0" onclick='v("0")'>
+                            <input type="button" class="button black" value="." onclick='v(".")'>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            <input type="button" class="button pink" value="+" onclick='v("+")'>
+                            <input type="button" class="button pink" value="-" onclick='v("-")'>
+                        </p>
+                        <p>
+                            <input type="button" class="button pink" value="*" onclick='v("*")'>
+                            <input type="button" class="button pink" value="/" onclick='v("/")'>
+                        </p>
+                        <p>
+                            <input type="button" class="button black" value="C" onclick='v("C")'>
+                            <input type="button" class="button orange" value="=" onclick='v("=")'>
+                        </p>
+                    </td>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Style Sheet Demonstration</title>
+        <h1 align="center">Style Sheet Demonstration</h1>
+        <style>
+            body{
+                background-color: #49BDAE;
+                color: #EB5454 ;
+            }
+            h1{
+                color:#1C1F66;
+                margin-left: 40px;
+            }
+            p.grovee{
+                border-style: groove;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            div{
+                border: 1px solid black;
+                margin-top: 100px;
+                margin-bottom: 100px;
+                margin-right: 150px;
+                margin-left: 80px;
+                height: 900px;
+                width: 80%;
+                background-color :#68E29A;
+                ul.a{
+                    list-style-type: disc;
+                }
+                ul.b{
+                    list-style-type: square;
+                }
+            }
+            table{
+                border-collapse: collapse ;
+                width: 80%;
+                align:center;
+            }
+            th,td{
+                text-align: center;
+                padding: 8px;
+            }
+            tr:nth-child(even){
+                background-color:#6E7619 ;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>This is a heading</h1>
+            <p class="groove">A groove border.</p>
+            <p><b><a href="stylesheet.html" target="_blank">This is a link</a></b></p>
+            <p>List of Programming languages</p>
+            <ul class="a">
+                <li>Java</li>
+                <li>Python</li>
+                <li>C#.NET</li>
+            </br>
+            <ul class="b">
+                <li>Java</li>
+                <li>Python</li>
+                <li>C#.NET</li>
+            </ul>
+            <h2 align="center">Striped Table</h2>
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Percetage</th>
+                </tr>
+                <tr>
+                    <td>Peter</td>
+                    <td>Griffin</td>
+                    <td>78%</td>
+                </tr>
+                <tr>
+                    <td>Lois</td>
+                    <td>Griffin</td>
+                    <td>50%</td>
+                </tr>
+                <tr>
+                    <td>Joe</td>
+                    <td>Swanson</td>
+                    <td>35%</td>
+                </tr>
+                <tr>
+                    <td>Cleveland</td>
+                    <td>Brown</td>
+                    <td>85%</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

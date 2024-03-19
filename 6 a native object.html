@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: #6C9986;
+                text-align: center;
+                font-size: large;
+            }
+            h1{
+                font-weight: 500;
+                color: #6BDD2C;
+                font-family:cursive;
+            }
+            h2{
+                color:#FC0311 ;
+                font-family:'Courier New', Courier, monospace;
+            }
+        </style>
+    </head>
+<body>
+    <h1>JavaScript Native Objects</h1>
+    <h2>Array</h2>
+    <p id="array-example"></p>
+    <h2>String</h2>
+    <p id="string-example"></p>
+    <h2>Number</h2>
+    <p id="number-example"></p>
+    <h2>Date</h2>
+    <p id="date-example"></p>
+    <h2>Boolean</h2>
+    <p id="boolean-example"></p>
+    <script>
+        const arrayExample = [1,2,3,4,5];
+        document.getElementById('array-example').textContent = arrayExample.toString();
+        const stringExample = "Hello, World!";
+        document.getElementById('string-example').textContent = stringExample;
+        const numberExample = 42;
+        document.getElementById('number-example').textContent = numberExample;
+        const dateExample = new Date();
+        document.getElementById('date-example').textContent = dateExample.toLocaleString();
+        const booleanExample = true;
+        document.getElementById('boolean-example').textContent = booleanExample;
+    </script>
+</body>
+</html>

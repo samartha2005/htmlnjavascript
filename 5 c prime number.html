@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <h1 align="center"><font color="#781313"><b>Prime number between 1 and 100</b></font></h1><br><br>
+    </head>
+    <body bgcolor="#9A5FD4">
+        <center>
+            <div>
+                <button type="button" onclick="PrimeNum()">Print</button>
+                <p id="demo"></p>
+                <script>
+                    function PrimeNum() {
+                        var x = 100;
+                        var primes = [];
+                        for (var i = 2; i <= x; i++) {
+                            var isPrime = true;
+                            for (var j = 2; j <= Math.sqrt(i); j++) {
+                                if (i % j === 0) {
+                                    isPrime = false;
+                                    break;
+                                }
+                            }
+                            if (isPrime) {
+                                primes.push(i);
+                            }
+                        }
+                        document.getElementById("demo").innerHTML = primes.join(", ");
+                    }
+                </script>
+            </div>
+        </center>
+    </body>
+</html>

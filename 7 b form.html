@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>Form Validation</title>
+<style>
+    .error {
+        color: red;
+        font-size: 14px;
+    }
+    body{
+        background-color: #fcc200;
+        font-size: 23px;
+    }
+    h1{
+        font-family:cursive;
+        color:#d9004c;
+        font-size: 40px;
+    }
+    #button{
+        color: white;
+        background-color: black;
+        font-size: 18px;
+    }
+    #button:hover{
+        background-color: blue;
+    }
+</style>
+</head>
+<body>
+    <center>
+    <h1>Form Validation</h1>
+    <form id="myForm" onsubmit="return validateForm()">
+        
+        Name: <input type="text" id="name" name="name"><br>
+        <span id="nameError" class="error"></span><br>
+
+       
+        Email: <input type="email" id="email" name="email"><br>
+        <span id="emailError" class="error"></span><br>
+       
+        Password: <input type="password" id="password" name="password"><br>
+        <span id="passwordError" class="error"></span><br>
+
+        Date of Birth: <input type="date" id="birthdate" name="birthdate"><br>
+        <span id="birthdateError" class="error"></span><br>
+
+        Gender: <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <span id="genderError" class="error"></span><br>
+
+        Comment:<textarea id="comments" name="comments" rows="4" cols="50"></textarea><br>
+        <span id="commentsError" class="error"></span><br>
+
+        <input type="checkbox" id="agree" name="agree">
+        <label for="agree">I agree to the terms and conditions</label><br>
+        <span id="agreeError" class="error"></span><br>
+
+        <input type="submit" value="Submit" id="button">
+    </form>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var birthdate = document.getElementById('birthdate').value;
+            var genderMale = document.getElementById('male').checked;
+            var genderFemale = document.getElementById('female').checked;
+            var comments = document.getElementById('comments').value;
+            var agree = document.getElementById('agree').checked;
+
+            var nameError = document.getElementById('nameError');
+            var emailError = document.getElementById('emailError');
+            var passwordError = document.getElementById('passwordError');
+            var birthdateError = document.getElementById('birthdateError');
+            var genderError = document.getElementById('genderError');
+            var commentsError = document.getElementById('commentsError');
+            var agreeError = document.getElementById('agreeError');
+
+            nameError.innerHTML = '';
+            emailError.innerHTML = '';
+            passwordError.innerHTML = '';
+            birthdateError.innerHTML = '';
+            genderError.innerHTML = '';
+            commentsError.innerHTML = '';
+            agreeError.innerHTML = '';
+
+            var isValid = true;
+
+            if (name.trim() === '') {
+                nameError.innerHTML = 'Name is required';
+                isValid = false;
+            }
+
+            if (email.trim() === '') {
+                emailError.innerHTML = 'Email is required';
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                emailError.innerHTML = 'Invalid email format';
+                isValid = false;
+            }
+
+            if (password.trim() === '') {
+                passwordError.innerHTML = 'Password is required';
+                isValid = false;
+            }
+
+            if (birthdate.trim() === '') {
+                birthdateError.innerHTML = 'Date of Birth is required';
+                isValid = false;
+            }
+
+            if (!genderMale && !genderFemale) {
+                genderError.innerHTML = 'Please select your gender';
+                isValid = false;
+            }
+
+            if (comments.trim() === '') {
+                commentsError.innerHTML = 'Comments are required';
+                isValid = false;
+            }
+
+            if (!agree) {
+                agreeError.innerHTML = 'Please agree to the terms and conditions';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+    </script>
+    </center>
+</body>
+</html>
